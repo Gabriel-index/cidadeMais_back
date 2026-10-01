@@ -1,0 +1,2914 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    font-family: 'Public Sans', sans-serif;
+    box-sizing: border-box;
+    
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul,li {
+    list-style: none;
+    padding: 0;
+}
+/*Header*/
+.header_index {
+    padding: 0 12px;
+    border-bottom: 1px solid #E7EBF3;
+    background-color: white;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.header_index a:hover{
+    color: #2C6BED;
+}
+
+.header_mobile_index {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.logo_name_index {
+    display: flex;
+    flex-direction: row;
+}
+
+.logo_cdd_header {
+    max-width: 3rem;
+}
+
+.h1_index {
+    font-size: 27px;
+}
+
+.simbolo_mais {
+    color: #2C6BED;
+}
+
+.icon_menu_index {
+    max-height: 50px;
+}
+
+.material-symbols-outlined {
+    margin-top: 1.5rem;
+    display: block;
+}
+
+.header_index ul {
+    list-style: none;
+    text-align: center;
+}
+
+.header_index li {
+    padding: 8px;
+}
+
+.header_index li a {
+    text-decoration: none;
+    color: #0E121B;
+}
+
+.header_index li.entrar_botao_index a {
+    color: #2C6BED;
+    font-weight: 700;
+    border: 2px solid #D5E1FB;
+    border-radius: 12px;
+    padding: 10px 64px;
+}
+
+.header_index li.entrar_botao_index_atual a {
+    color: #2C6BED;
+    font-weight: 700;
+    border: 2px solid #2C6BED;
+    border-radius: 12px;
+    padding: 8px 32px;
+}
+
+
+
+li.baixar_agora {
+    margin-top: 15px;
+}
+
+.header_index li.baixar_agora a {
+    color: white;
+    background-color: #2C6BED;
+    font-weight: 700;
+    border-radius: 12px;
+    padding: 12px 64px;
+}
+
+.header_index li.pg_atual a {
+    color: #2C6BED;
+}
+
+.menu {
+    display: none;
+    padding: 0;
+}
+
+.menu.ativo {
+    display: block;
+    padding: 0;
+}
+/* INDEX */
+/*Main*/
+/* Parte superior */
+.pag_normal {
+    margin-top: 60px;
+    padding-top: 8px;
+}
+.parte_superior {
+    background-color: #F8FAFC;
+    border-bottom: 2px solid #E7EBF3;
+}
+
+.tec_que_resolve {
+    padding-top: 35px;
+}
+
+.tick_disponivel {
+    text-align: center;
+    margin: 0 auto;
+    background-color: rgba(44, 107, 237, 0.1);
+    color: #2C6BED;
+    font-weight: 700;
+    max-width: 240px;
+    padding: 6px;
+    border-radius: 16px;
+}
+
+.div_h2_index {
+    text-align: center;
+}
+
+.h2_tec_que_resolve {
+    font-weight: 900;
+    font-size: 40px;
+    line-height: 0.4;
+}
+
+.p_tec {
+    text-align: center;
+    padding: 0 17px;
+    color: #4E6797;
+    font-size: 24px;
+}
+
+.div_apps {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    padding-top: 10px;
+    text-align: center;
+}
+
+.img_baixar {
+    max-width: 12rem;
+    padding-top: 10px;
+}
+
+.parte_superior aside {
+    text-align: center;
+}
+
+.mock_celular {
+    max-width: 17rem;
+}
+
+/* Impacto na sua Cidade */
+
+.h4_impacto {
+    color: #9CA3AF;
+    text-align: center;
+    font-weight: bold;
+}
+
+.impacto_na_cidade {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+}
+
+.card_impacto_index {
+    border-top: 2px solid #E7EBF3;
+    border-bottom: 2px solid #E7EBF3;
+    max-width: 350px;
+    padding: 25px 0;
+    margin: 0 auto;
+    }
+
+.title_impactos {
+    color: #4E6797;
+    margin: 7px;
+}
+
+.valores_impactos {
+    font-weight: 900;
+    color: #0E121B;
+    font-size: 45px;
+    margin: 24px;
+}
+
+#problemas_resolvidos_valor {
+    color: #2C6BED;
+}
+
+.descricao_impacto {
+    color: #2ECC71;
+    font-weight: bold;
+}
+
+/* Por que usar o Cidades+ */
+
+.section_pq_usar_cidades {
+    background-color: #2C6BED;
+    border-top: 2px solid #E7EBF3;
+    border-bottom: 2px solid #E7EBF3;
+}
+
+.cont_pq_usar {
+    padding: 0 35px;
+    text-align: center;
+}
+
+.h4_pq_usar {
+    color: #F1C40F;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.voz_poder {
+    color: #EAF0FD;
+    font-weight: 900;
+    font-size: 32px;
+}
+
+.voz_poder1 {
+    color: #0E121B;
+    font-weight: 900;
+    font-size: 32px;
+}
+
+.frase_poder {
+    color: #F2F4F7;
+    font-size: 20px;
+}
+
+.div_cards_pq {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.cards_pq {
+    background-color: white;
+    padding: 25px;
+    margin: 25px 0;
+    border: 2px solid #E7EBF3;
+    border-radius: 12px;
+}
+
+.cards_pq:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  transition: 0.3s;
+}
+
+.icones_pq {
+    max-width: 25%;
+}
+
+.title_cards_pq {
+    font-weight: 700;
+    font-size: 23px;
+}
+
+.descricao_cards_pq {
+    color: #4E6797;
+}
+
+/* Como funciona o aplicativo */
+
+.section_como_funciona {
+    border-bottom: 2px solid #E7EBF3;
+}
+
+.cont_como_funciona {
+    text-align: center;
+    padding: 0 12px;
+}
+
+.div_cards_como_funciona {
+    display: flex;
+    flex-direction: column;
+}
+
+.card_como_funciona {
+    max-width: 70%;
+    margin: 0 auto;
+}
+
+.icone_como_funciona {
+    max-width: 5.5rem;
+}
+
+.title_cards_como_funciona {
+    color: #0E121B;
+    font-size: 20px;
+    margin: 10px 0;
+}
+
+.descricao_cards_como_funciona {
+    color: #4E6797;
+    font-size: 16px;
+    margin-bottom: 55px;
+}
+
+/* MAIN SOBRE NÓS */
+
+.parte_superior_sobre_nos {
+    background-image: url(../img/fundo_sobre_nos_mobile.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    text-align: center;
+    padding: 35px 20px 35px 20px ;
+}
+
+.tick_sobre_nos {
+    color: #fff;
+    text-align: center;
+    font-size: 13px;
+    padding: 5px;
+    border-radius: 50px;
+    border: 1px solid rgba(255,255,255,0.3);
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(3px);
+    margin: 0 auto;
+    max-width: 140px;
+}
+
+.h2_sobre_nos_parte_superior {
+    font-size: 39px;
+    font-weight: 900;
+    max-width: 1000px;
+    margin: 0 auto;
+    color: white;
+    padding: 5px;
+}
+
+.h2_sobre_nos_parte_superior span {
+    color: #F1C40F;
+}
+
+.descricao_sobre_nos_parte_superior {
+    color: white;
+    font-size: 15px;
+    font-weight: 400;
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 17px 5px;
+}
+
+.cor_tela_sobre {
+    background-color: #F2F4F7;
+}
+
+.h2_sobre_nos {
+    text-align: center;
+    padding: 28px 24px 15px 24px;
+    font-size: 33px;
+    font-weight: 900;
+    color: #2F3640;
+    margin: 0;
+}
+
+.tick_azul_sobre {
+    background-color: #2C6BED;
+    font-size: 6px;
+    color: #2C6BED;
+    margin: 0 auto;
+    width: 75px;
+    max-height: 15px;
+    border-radius: 15px;
+}
+/* NOSSOS VALORES */
+
+.div_cards_nossos_valores {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 35px 35px;
+    margin: 0 auto;
+}
+
+.cards_nossos_valores {
+    background-color: white;
+    padding: 25px;
+    border: 1px solid #F3F4F6;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin: 15px 0;
+}
+
+.icones_nossos_valores {
+    max-width: 70px;
+    max-height: 70px;
+}
+
+.titulo_cards_nossos_valores {
+    color: #2F3640;
+    font-weight: 700;
+    font-size: 23px;
+}
+
+.descricao_cards_nossos_valores {
+    color: #4E6797;
+    font-size: 16px;
+}
+
+#integridade {
+    color: #2ECC71;
+    font-weight: 600;
+}
+
+#impacto_social {
+    color: #F1C40F;
+    font-weight: 600;
+}
+
+/*Por que nasceu?*/
+.pq_nasceu {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.img_pessoa {
+    width: clamp(200px, 65%, 1200px);
+    height: clamp(250px, 65%, 1200px);
+}
+
+.text_pq_nasceu {
+    padding: 0 25px;
+    text-align: left;
+}
+
+.h2_pq_nasceu {
+    font-size: 36px;
+    font-weight: 900;
+    color: #2F3640;
+}
+
+.h2_pq_nasceu span {
+    color: #2C6BED;
+}
+
+.p_pq_nasceu {
+    color: rgba(47, 54, 64, 0.7);
+    font-size: 1.3rem;
+    line-height: 29px;
+}
+
+.dados_pq_nasceu {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+}
+
+#segundo_card_pq {
+    margin: 0 40px;
+}
+
+#primeiro_valor_pq {
+    font-weight: 900;
+    font-size: 30px;
+    color: #2C6BED;
+    margin: 0;
+}
+
+#segundo_valor_pq {
+   font-weight: 900;
+    font-size: 30px;
+    color: #2ECC71;
+    margin: 0;
+}
+
+.descricao_valores_pq {
+    color: rgba(47, 54, 64, 0.5);
+}
+
+/*Perguntas Frequentes*/
+.section_perguntas_frequentes {
+    margin: 0 1px;
+}
+
+.h4_perguntas_frequentes {
+    color: #2C6BED;
+    text-align: center;
+}
+
+.h2_perguntas_frequentes {
+    font-size: 30px;
+    font-weight: 900;
+    color: #2F3640;
+    text-align: center;
+}
+
+.div_caixas_de_perguntas {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding:65px;
+}
+
+.caixa_de_perguntas {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 5px 25px;
+    background-color: white;
+    border: 1px solid #F3F4F6;
+    border-radius: 16px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    width: clamp(300px, 80%, 1200px);
+    margin: 7px 10px 6px 10px;
+    cursor: pointer;
+}
+
+.icone_e_perguntas {
+    display: flex;
+    flex-direction: row;
+}
+
+.icones_perguntas_frequentes {
+    max-width: 20px;
+    max-height: 20px;
+    margin: 17px 15px 15px 0;
+}
+
+.icone_seta_perguntas {
+    max-width: 15px;
+    max-height: 15px;
+    margin: 20px 0;
+}
+
+.caixa_de_resposta_faq {
+    padding: 11px 25px;
+    background-color: white;
+    border: 1px solid #F3F4F6;
+    border-radius: 16px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    width: clamp(300px, 80%, 1200px);
+    margin: 0 0 5px 0;
+}
+
+.p_caixa_resposta_faq {
+    line-height: 21px;
+}
+
+/* Animação da seta */
+.icone_seta_perguntas {
+    transition: transform 0.3s ease;
+}
+
+/* Girar seta */
+.caixa_de_perguntas.ativa .icone_seta_perguntas {
+    transform: rotate(180deg);
+}
+
+.caixa_de_perguntas {
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.caixa_de_perguntas:hover {
+    background: #f5f5f5;
+}
+
+/*Pronto para transformar?*/
+.section_transformar {
+    background-color: #2F3640;
+}
+
+.h2_transformar {
+    color: white;
+    text-align: center;
+    font-size: 29px;
+    font-weight: 900;
+    margin: 0;
+    padding: 67px 15px;
+}
+
+.p_tranformar {
+    color: #9CA3AF;
+    text-align: center;
+    padding: 0 15px;
+}
+
+.div_baixar_btns {
+    margin-top: 50px;
+    padding: 15px;
+    text-align: center;
+}
+
+.img_baixar_transformar {
+    max-width: 170px;
+    max-height: 59px;
+}
+
+.caixa_de_resposta_faq {
+    display: none;
+}
+
+.caixa_de_resposta_faq.ativo {
+    display: block;
+}
+
+/* TELA LOGIN  */
+/* MAIN */
+/* Lado Esquerdo */
+
+.texto_esquerdo_login {
+    display: none;
+}
+
+/*Lado direito*/
+
+.main_tela_login {
+    background-color: #F8FAFC;
+}
+
+.section_login {
+    margin: 50px 15px;
+}
+
+.h2_entrar_login {
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: #2F3640;
+    margin: 103px 0 0 0;;
+}
+
+.acessar_sua_conta {
+    color: rgba(47, 54, 64, 0.6);
+    font-weight: 500;
+    line-height: 40px;
+    font-size: 20px;
+}
+
+
+
+.form_login {
+    display: flex;
+    flex-direction: column;
+}
+
+.form_login label {
+    font-weight: bold;
+    color: #2F3640;
+}
+
+.form_login input {
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 15px;
+    border: 1px solid #E5E7EB;
+    max-width: 580px;
+}
+
+.section_login a {
+    text-decoration: none;
+    font-weight: bold;
+    color: #2C6BED;
+}
+
+.section_login a:hover {
+    color: #5b8ae9;
+    
+}
+
+.form_login button {
+    padding: 15px;
+    max-width: 620px;
+    background-color: #2C6BED;
+    color: white;
+    border-radius: 15px;
+    border: none;
+    font-size: 19px;
+    font-weight: bold;
+    box-shadow: 2px 4px 9px rgba(0,0,0,0.5);
+    margin-top: 30px;
+}
+
+.form_login button:hover {
+    background-color: #5b8ae9;
+    cursor: pointer;
+}
+
+.esqueci_senha {
+    display: flex;
+    justify-content: right;
+}
+
+.nao_tem_conta {
+    color: rgba(47, 54, 64, 0.6);
+    margin: 45px 0 0;
+    text-align: center;
+}
+
+.concorda_login {
+    color: rgba(47, 54, 64, 0.4);
+    text-align: center;
+}
+
+.concorda_login a {
+    color: rgba(47, 54, 64, 0.4);
+    font-size: 16px;
+    font-weight: normal;
+}
+
+.concorda_login a:hover {
+    color: #2F3640;
+}
+
+/* TELA CADASTRE-SE */
+/* Lado Esquerdo */
+
+.texto_esquerdo_cadastrar {
+    display: none;
+}
+
+/*Lado direito*/
+
+.main_tela_cadastrar {
+    background-color: #F8FAFC;
+}
+
+.section_cadastrar {
+    margin: 50px 15px;
+}
+
+.h2_entrar_cadastrar {
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: #2F3640;
+    margin: 103px 0 0 0;
+}
+
+.acessar_sua_conta {
+    color: rgba(47, 54, 64, 0.6);
+    font-weight: 500;
+    line-height: 40px;
+    font-size: 20px;
+}
+
+.botoes_entrar_cadastrar {
+    text-align: center;
+}
+
+.img_entrar_cadastrar {
+    width: clamp(140px, 40%, 300px);
+    cursor: pointer;
+}
+
+.traco_cadastrar {
+    color: rgba(47, 54, 64, 0.6);
+    font-weight: 300;
+    line-height: 40px;
+    font-size: 15px;
+
+}
+
+.ou_e-mail_cadastrar {
+    color: rgba(47, 54, 64, 0.6);
+    font-weight: 300;
+    line-height: 0px;
+    font-size: 16px;
+    text-align: center;
+}
+
+.form_cadastrar {
+    display: flex;
+    flex-direction: column;
+}
+
+.form_cadastrar label {
+    font-weight: bold;
+    color: #2F3640;
+}
+
+.form_cadastrar input {
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 15px;
+    border: 1px solid #E5E7EB;
+    max-width: 580px;
+}
+
+.section_cadastrar a {
+    text-decoration: none;
+    font-weight: bold;
+    color: #2C6BED;
+}
+
+.section_cadastrar a:hover {
+    color: #5b8ae9;
+    
+}
+
+.form_cadastrar button {
+    padding: 15px;
+    max-width: 620px;
+    background-color: #2C6BED;
+    color: white;
+    border-radius: 15px;
+    border: none;
+    font-size: 19px;
+    font-weight: bold;
+    box-shadow: 2px 4px 9px rgba(0,0,0,0.5);
+}
+
+.form_cadastrar button:hover {
+    background-color: #5b8ae9;
+    cursor: pointer;
+}
+
+.esqueci_senha {
+    display: flex;
+    justify-content: right;
+}
+
+.nao_tem_conta {
+    color: rgba(47, 54, 64, 0.6);
+    margin: 45px 0 0;
+    text-align: center;
+}
+
+.concorda_cadastrar {
+    color: rgba(47, 54, 64, 0.4);
+    text-align: center;
+}
+
+.concorda_cadastrar a {
+    color: rgba(47, 54, 64, 0.4);
+    font-size: 16px;
+    font-weight: normal;
+}
+
+.concorda_cadastrar a:hover {
+    color: #2F3640;
+}
+
+.toggle_tipo_conta {
+    display: flex;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+
+.grupo_campos_cadastrar {
+    display: flex;
+    flex-direction: column;
+}
+
+.grupo_campos_cadastrar label {
+    font-weight: bold;
+    color: #2F3640;
+    margin-top: 10px;
+}
+
+.grupo_campos_cadastrar input {
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 15px;
+    border: 1px solid #E5E7EB;
+    max-width: 580px;
+    width: 100%;
+}
+
+/* MODAL CADASTRAR/LOGIN */
+/* CHECKBOX TERMOS */
+.termos-box {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 15px 0;
+  font-size: 14px;
+}
+
+.termos-box a {
+  color: #007bff;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+/* BOTÃO DESABILITADO */
+#btnSubmit:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* MODAL OVERLAY */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(4px);
+}
+
+/* CAIXA MODERNA */
+.modal-conteudo {
+  background: #fff;
+  margin: auto;
+  margin-top: 5%;
+  padding: 25px;
+  width: 90%;
+  max-width: 520px;
+  border-radius: 16px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+  animation: slideUp 0.3s ease;
+}
+
+/* ANIMAÇÃO */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* FECHAR */
+.fechar {
+  position: absolute;
+  right: 20px;
+  top: 15px;
+  border: none;
+  background: none;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+/* TEXTO */
+.modal-texto {
+  max-height: 250px;
+  overflow-y: auto;
+  margin: 20px 0;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* BOTÕES */
+.modal-botoes {
+  display: flex;
+  justify-content: flex-end;
+}
+
+#btnAceito {
+  background: linear-gradient(135deg, #28a745, #218838);
+  color: white;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+#btnAceito:hover {
+  transform: scale(1.05);
+}
+
+/*Footer*/
+
+footer {
+    text-align: center;
+    padding: 0 35px;
+}
+
+footer a,
+footer p {
+    color: #4E6797;
+}
+
+.footer_section {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer_logo {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.logo_footer_img {
+    max-width: 3rem;
+}
+
+.icons_footer_img {
+    max-width: 2.5rem;
+}
+
+/* SECTION 1 - TELA COMO FUNCIONA: estrutura da introdução */
+.section-cinza-funciona {
+    background-color: #E4ECFB;
+    padding: 16px 0 0;
+}
+
+.alinhando-text-img-funciona {
+    display: flex;
+    flex-direction: column;
+}
+
+.alinhamento-centro-funcionamento {
+    text-align: center;
+}
+
+.ensinamento-funciona {
+    color: #2C6BED;
+    background-color: rgba(44, 107, 237, 10%);
+    font-weight: 700;
+    font-size: 12px;
+    padding: 7px 11px;
+    border-radius: 20px;
+}
+
+.h2-funciona {
+    color: #0D121B;
+    font-size: 50px;
+    font-weight: 900;
+    margin: 16px 0 16px;
+}
+
+.span-azul-funciona {
+    color: #2C6BED;
+}
+
+.p-dezoito-funciona {
+    font-size: 18px;
+    font-weight: 500;
+    color: #4C669A;
+    text-align: center;
+    max-width: 720px;
+}
+
+.div-img-funciona {
+    text-align: center;
+}
+
+.img-cell-funciona {
+    width: 100%;
+    width: clamp(300px, 21rem, 500px);
+    margin: 30px 0 40px;
+}
+/* SECTION 2 - TELA COMO FUNCIONA: organização dos primeiros passos */
+
+.h3-2section-funciona {
+    text-align: center;
+    margin: 30px 0 15px;
+    font-size: 35px;
+}
+
+.p-22dezoito-funciona {
+    font-size: 18px;
+    font-weight: 500;
+    color: #4C669A;
+    margin: 0 auto 10px;
+    text-align: center;
+}
+
+.quadrados2-2section-funciona {
+    width: clamp(301px, 45%, 600px);
+    height: 370px;
+    padding: 20px 33px 50px;
+    background-color: #F8F9FC;
+    margin: 30px auto;
+    border-radius: 25px;
+    border: 1px solid #E7EBF3;
+}
+
+.img_texto_funciona {
+    display: flex;
+    flex-direction: row;
+}
+
+.img-quadrados2-funciona {
+    justify-content: start;
+    width: 48px;
+    height: 48px;
+    border-radius: 6px;
+    margin-right: 17px;
+}
+
+.h5-quadrados2-funciona {
+    margin: 18px 0;
+    color: #0D121B;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.p-quadrados2-funciona {
+    font-size: 16px;
+    font-weight: 500;
+    color: #4C669A;
+    margin: 0 0 35px;
+    max-width: 95%;
+}
+
+.span-quadrados2-funciona {
+    color: #4C669A;
+    font-size: 14px;
+    font-weight: 500;
+    margin: 0 0 25px;
+    display: block;
+}
+
+/* SECTION 3 - TELA COMO FUNCIONA: estrutura do passo a passo */
+.cinza-3section-funciona {
+    background-color: #F8F9FC;
+}
+
+.p-3section-funciona {
+    padding: 30px 0 10px;
+    color: #2ECC71;
+    font-size: 14px;
+    font-weight: 700;
+    display: block;
+    text-align: center;
+}
+
+.h3-3section-funciona {
+    display: block;
+    text-align: center;
+    margin: 2px 0 0px;
+    font-size: 35px;
+    font-weight: 700;
+    justify-content: left;
+}
+
+
+.span2-1azul-funciona {
+    display: none;
+}
+
+.span2-2azul-funciona {
+    display: none;
+}
+
+.span2-verde-funciona{
+    display: none;
+}
+
+.span2-4azul-funciona {
+   display: none;
+}
+
+.div1e3-funciona {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.div2e4-funciona {
+    display: flex;
+    flex-wrap: wrap-reverse;
+    justify-content: center;
+}
+
+.div-impar-funciona {
+    width: 350px;
+    height: 130px;
+    margin: 20px auto;
+}
+
+.div-par-funciona {
+    width: 350px;
+    height: 130px;
+    margin: 20px auto;
+}
+
+.h4-impar-funciona {
+    font-size: 24px;
+    font-weight: 700;
+    color: #0D121B;
+    margin: 10px 0 6px;
+}
+
+.h4-par-funciona {
+    font-size: 24px;
+    font-weight: 700;
+    color: #0D121B;
+    margin: 10px 0 6px;
+}
+
+.p-impar-funciona{
+    font-size: 16px;
+    font-weight: 500;
+    color: #4C669A;
+}
+
+.p-par-funciona {
+    font-size: 16px;
+    font-weight: 500;
+    color: #4C669A;
+}
+
+.img-impar-par-funciona {
+    width: 340px;
+    height: 128px;
+    margin: 20px auto;
+    border-radius: 8px;
+}
+
+/* SECTION 4 - TELA COMO FUNCIONA: organização dos recursos */
+.h3-4section-funciona {
+    text-align: center;
+    font-size: 35px;
+    font-weight: 700;
+    color: #0D121B;
+    margin: 40px 0 20px;
+}
+
+.p-4section-funciona {
+    text-align: center;
+    color: #4C669A;
+    margin: 10px auto;
+    font-size: 18px;
+    font-weight: 500;
+
+}
+
+.divs2-funciona {
+    display: flex;
+    flex-direction: column;
+}
+
+.quadrados22-2section-funciona { 
+    flex-direction: column;
+    width: clamp(305px, 45%, 600px);
+    height: 370px;
+    padding: 22px 17px;
+    background-color: #F8F9FC;
+    margin: 30px auto;
+    border: 1px solid #E7EBF3;
+    border-radius: 25px;
+}
+
+.quadrados22-2section-funciona h5 {
+    margin: 12px;
+}
+
+.quadrados22-2section-funciona .img-quadrados2-funciona {
+    margin-bottom: 25px;
+}
+
+.bloco-funciona {
+    display: flex;
+    flex-direction: row;
+    width: 50px;
+    height: 50px;
+    margin: 60px auto 0;
+    gap: 60px;
+    justify-content: center;
+}
+
+.img3-4section-funciona {
+    margin: 0 auto 20px;
+    display: block;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.span3-4section-funciona {
+    color: #6B7280;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.img-img-funciona {
+    width: 100%;
+    height: 150px;
+    justify-content: center;
+    border-radius: 6px;
+}
+
+/* SECTION 5 - TELA COMO FUNCIONA: bloco de segurança */
+.mudanca-cor {
+    background-color: #F8FAFC;
+    padding: 50px 0;
+}
+
+.div-div-funciona {
+    text-align: center;
+    justify-content: center;
+    margin: 0 auto;
+    width: clamp(305px, 70%, 1500px);
+    height: 500px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    border: 1px solid #E7EBF3;
+    padding: 15px 20px;
+}
+
+.img-section5-funciona {
+    width: 128px;
+    height: 128px;
+    border-radius: 50%;
+    margin: 15px 0;
+}
+
+.div333-funciona {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.p-p-funciona {
+    color: #4C669A;
+    font-size: 16px;
+    font-weight: 500;
+    margin: 20px 0 22px;
+}
+
+.aalinhado-funciona {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.linha-funciona {
+    display: flex;
+    margin: 14px 0 0;
+}
+
+.pequeno-funciona {
+    width: 20px;
+    height: 20px;
+    margin: 0 10px 0 2px;
+}
+
+/* SECTION 6 - TELA COMO FUNCIONA: área final com botão */
+.azul-funciona {
+    background-color: #2C6BED;
+    text-align: center;
+    flex-direction: column;
+}
+
+.branco-funciona {
+    color: #fff;
+    font-size: 35px;
+    font-weight: 700;
+    padding: 40px 0 20px;
+    margin: 0 10px;
+}
+
+.p-branco-funciona {
+    color: #fff;
+    margin: 6px 10px 30px;
+    padding: 0 5px;
+    font-size: 18px;
+}
+
+.botao-azul-funciona {
+    color: #2C6BED;
+    background-color: #fff;
+    padding: 10px 14px;
+    border-radius: 5px;
+    font-weight: 700;
+}
+
+.hj-funciona {
+    padding: 20px 0 40px;
+    color: #BFDBFE;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.toggle_tipo_conta {
+    display: flex;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.btn_toggle_tipo {
+    flex: 0 1 auto;
+    width: 48%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 10px;
+    border: 1px solid #E5E7EB;
+    border-radius: 16px;
+    background-color: #F2F4F7;
+    color: #2F3640;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.2s;
+    outline: none;
+}
+
+.btn_toggle_tipo.ativo {
+    background-color: #2C6BED;
+    color: white;
+    border-color: #2C6BED;
+}
+
+.main_perfil_prefeitura {
+    background-color: #F8FAFC;
+    padding: 8px 15px 40px;
+}
+
+.main_perfil_prefeitura > * {
+    max-width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* o ícone global tem margin-top e display block (usado no menu do header) */
+.main_perfil_prefeitura .material-symbols-outlined {
+    margin-top: 0;
+    display: inline-block;
+    font-size: 20px;
+    vertical-align: middle;
+}
+
+.main_perfil_prefeitura a:focus-visible,
+.main_perfil_prefeitura button:focus-visible,
+.main_perfil_prefeitura input:focus-visible {
+    outline: 2px solid #2C6BED;
+    outline-offset: 2px;
+}
+
+/* Breadcrumb */
+.breadcrumb_perfil {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 8px;
+    padding: 14px 0;
+    font-size: 12px;
+    color: #4E6797;
+}
+
+.lista_breadcrumb_perfil {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.lista_breadcrumb_perfil li + li::before {
+    content: "/";
+    margin-right: 8px;
+    color: #9CA3AF;
+}
+
+.lista_breadcrumb_perfil a,
+.voltar_painel_perfil {
+    color: #4E6797;
+}
+
+.lista_breadcrumb_perfil a:hover,
+.voltar_painel_perfil:hover {
+    color: #2C6BED;
+}
+
+.lista_breadcrumb_perfil li[aria-current="page"] {
+    color: #2F3640;
+    font-weight: 700;
+}
+
+.voltar_painel_perfil {
+    font-weight: 700;
+    color: #2C6BED;
+}
+
+.voltar_painel_perfil .material-symbols-outlined {
+    font-size: 14px;
+}
+
+/* Painéis (cards brancos) */
+.painel_perfil {
+    background-color: white;
+    border: 1px solid #E7EBF3;
+    border-radius: 16px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+/* Identidade */
+.identidade_perfil {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.avatar_prefeitura {
+    position: relative;
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+    width: 72px;
+    height: 72px;
+    border-radius: 16px;
+    background-color: #2C6BED;
+    color: white;
+    font-size: 24px;
+    font-weight: 900;
+}
+
+.avatar_prefeitura .selo_avatar_prefeitura {
+    position: absolute;
+    right: -8px;
+    bottom: -8px;
+    padding: 4px;
+    border: 1px solid #E7EBF3;
+    border-radius: 50%;
+    background-color: white;
+    color: #2C6BED;
+    font-size: 14px;
+}
+
+.titulo_perfil {
+    margin: 0 0 8px;
+    font-size: 26px;
+    font-weight: 900;
+    color: #2F3640;
+}
+
+.selo_vinculado_perfil {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    margin: 0 0 8px;
+    padding: 3px 10px;
+    border-radius: 20px;
+    background-color: rgba(46, 204, 113, 0.12);
+    color: #1E8449;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.selo_vinculado_perfil .material-symbols-outlined {
+    font-size: 14px;
+}
+
+.meta_perfil {
+    margin: 4px 0;
+    font-size: 14px;
+    color: #4E6797;
+}
+
+.status_operacional_perfil {
+    padding: 12px 16px;
+    border: 1px solid rgba(46, 204, 113, 0.35);
+    border-radius: 12px;
+    background-color: rgba(46, 204, 113, 0.1);
+}
+
+.rotulo_status_perfil {
+    margin: 0 0 4px;
+    font-size: 12px;
+    font-weight: 700;
+    color: #4E6797;
+}
+
+.texto_status_perfil {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0;
+    font-size: 14px;
+    font-weight: 700;
+    color: #1E8449;
+}
+
+.texto_status_perfil::before {
+    content: "";
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #2ECC71;
+}
+
+/* Cabeçalho de painel / seção */
+.cabecalho_painel_perfil {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 8px;
+}
+
+.titulo_painel_perfil {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0;
+    font-size: 18px;
+    font-weight: 900;
+    color: #2F3640;
+}
+
+.titulo_painel_perfil .material-symbols-outlined {
+    color: #2C6BED;
+}
+
+.subtitulo_painel_perfil {
+    margin: 4px 0 0;
+    font-size: 14px;
+    color: #4E6797;
+}
+
+.tag_perfil {
+    align-self: flex-start;
+    margin: 0;
+    padding: 4px 10px;
+    border-radius: 20px;
+    background-color: #EEF2F8;
+    color: #4E6797;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.link_relatorios_perfil {
+    font-size: 13px;
+    font-weight: 700;
+    color: #2C6BED;
+}
+
+.link_relatorios_perfil:hover {
+    color: #5b8ae9;
+}
+
+/* Formulário (reaproveita .grupo_campos_cadastrar) */
+.form_perfil {
+    margin-top: 20px;
+}
+
+.form_perfil .grupo_campos_cadastrar {
+    margin-bottom: 14px;
+}
+
+.form_perfil .grupo_campos_cadastrar label {
+    margin-top: 0;
+    font-size: 13px;
+}
+
+.form_perfil .grupo_campos_cadastrar input {
+    max-width: none;
+    margin: 6px 0;
+    padding: 12px 14px 12px 42px;
+    font-size: 14px;
+    color: #2F3640;
+}
+
+.form_perfil .grupo_campos_cadastrar input:read-only {
+    background-color: #F2F4F7;
+    color: #6B7280;
+}
+
+.campo_icone_perfil {
+    position: relative;
+    display: block;
+}
+
+.campo_icone_perfil .material-symbols-outlined {
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #9CA3AF;
+    pointer-events: none;
+}
+
+.dica_campo_perfil {
+    font-size: 12px;
+    color: #6B7280;
+}
+
+.linha_campos_perfil {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.acoes_form_perfil {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+    padding-top: 16px;
+    border-top: 1px solid #E7EBF3;
+}
+
+.mensagem_status_perfil {
+    margin: 0 auto 0 0;
+    font-size: 13px;
+    font-weight: 600;
+    color: #1E8449;
+}
+
+.btn_secundario_perfil,
+.btn_primario_perfil,
+.btn_comunicado_perfil {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.btn_secundario_perfil {
+    border: 1px solid #E5E7EB;
+    background-color: white;
+    color: #2F3640;
+}
+
+.btn_primario_perfil {
+    border: none;
+    background-color: #2C6BED;
+    color: white;
+}
+
+.btn_primario_perfil:hover:not(:disabled) {
+    background-color: #5b8ae9;
+}
+
+.btn_secundario_perfil:disabled,
+.btn_primario_perfil:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.ocorrencia_principal {
+    margin-top: 60px;
+    padding: 8px 16px 40px;
+    background-color: #F8FAFC;
+}
+
+.ocorrencia_principal > * {
+    max-width: 1152px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* o ícone global do styles.css tem margin-top e display block (usado no menu do header) */
+.ocorrencia_principal .material-symbols-outlined {
+    margin-top: 0;
+    display: inline-block;
+    font-size: 20px;
+    vertical-align: middle;
+}
+
+/* Navegação secundária */
+.ocorrencia_navegacao_sec {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    font-size: 13px;
+    color: #4E6797;
+}
+
+.ocorrencia_voltar {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #2C6BED;
+    font-weight: 700;
+}
+
+/* Colunas */
+.ocorrencia_grid {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.ocorrencia_coluna_esq,
+.ocorrencia_coluna_dir {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.ocorrencia_coluna_dir {
+    order: -1;
+}
+
+/* Cards */
+.ocorrencia_card {
+    padding: 18px;
+    background-color: white;
+    border: 1px solid #E7EBF3;
+    border-radius: 16px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.ocorrencia_cabecalho_card {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 16px;
+}
+
+.ocorrencia_titulo_card {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 700;
+    color: #0E121B;
+}
+
+.ocorrencia_titulo_pequeno {
+    font-size: 14px;
+}
+
+.ocorrencia_secundario {
+    font-size: 13px;
+    color: #4E6797;
+}
+
+/* Card 1 - Detalhes do problema */
+.ocorrencia_meta_topo {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+    font-size: 12px;
+    color: #4E6797;
+}
+
+.ocorrencia_badge_status {
+    padding: 4px 12px;
+    border-radius: 20px;
+    background-color: rgba(241, 196, 15, 0.18);
+    color: #2F3640;
+    font-weight: 700;
+}
+
+.ocorrencia_badge_status::before {
+    content: "";
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    margin-right: 6px;
+    border-radius: 50%;
+    background-color: #F1C40F;
+}
+
+.ocorrencia_tempo {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.ocorrencia_tempo .material-symbols-outlined {
+    font-size: 16px;
+    color: #2ECC71;
+}
+
+.ocorrencia_titulo {
+    margin: 16px 0 12px;
+    font-size: 26px;
+    font-weight: 900;
+    line-height: 1.2;
+    color: #0E121B;
+}
+
+.ocorrencia_local {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin: 0;
+    font-size: 14px;
+    color: #4E6797;
+}
+
+.ocorrencia_local .material-symbols-outlined {
+    font-size: 18px;
+}
+
+.ocorrencia_imagem {
+    margin: 20px 0;
+    border-radius: 12px;
+    overflow: hidden;
+    background-color: #E7EBF3;
+}
+
+.ocorrencia_imagem img {
+    display: block;
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.ocorrencia_rotulo {
+    margin: 0 0 6px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: #4E6797;
+}
+
+.ocorrencia_texto {
+    margin: 0;
+    font-size: 16px;
+    line-height: 26px;
+    color: #2F3640;
+}
+
+/* Card 2 - Progresso do atendimento */
+.ocorrencia_timeline {
+    margin: 16px 0 0;
+    padding: 0;
+    list-style: none;
+}
+
+.ocorrencia_etapa {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 12px;
+    border-radius: 12px;
+}
+
+.ocorrencia_etapa:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    left: 23px;
+    top: 40px;
+    bottom: -12px;
+    width: 2px;
+    background-color: #E7EBF3;
+}
+
+.ocorrencia_etapa_icone {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: #E7EBF3;
+    color: white;
+}
+
+.ocorrencia_etapa_icone .material-symbols-outlined {
+    font-size: 16px;
+}
+
+.ocorrencia_etapa_texto {
+    flex: 1;
+}
+
+.ocorrencia_etapa_texto strong {
+    font-size: 14px;
+    color: #0E121B;
+}
+
+.ocorrencia_etapa_texto p {
+    margin: 2px 0 0;
+    font-size: 13px;
+    color: #4E6797;
+}
+
+.ocorrencia_etapa_hora {
+    font-size: 12px;
+    color: #4E6797;
+    white-space: nowrap;
+}
+
+.ocorrencia_etapa.concluida .ocorrencia_etapa_icone {
+    background-color: #2ECC71;
+}
+
+.ocorrencia_etapa.atual {
+    background-color: rgba(44, 107, 237, 0.08);
+}
+
+.ocorrencia_etapa.atual .ocorrencia_etapa_icone {
+    background-color: #2C6BED;
+}
+
+.ocorrencia_etapa.atual .ocorrencia_etapa_texto strong,
+.ocorrencia_etapa.atual .ocorrencia_etapa_hora {
+    color: #2C6BED;
+    font-weight: 700;
+}
+
+.ocorrencia_etapa.pendente .ocorrencia_etapa_texto strong {
+    color: #4E6797;
+    font-weight: 500;
+}
+
+/* Card 3 - Comentários */
+.ocorrencia_comentario {
+    margin-bottom: 12px;
+    padding: 14px 16px;
+    border-radius: 12px;
+    background-color: #F8FAFC;
+}
+
+.ocorrencia_comentario:last-child {
+    margin-bottom: 0;
+}
+
+.ocorrencia_comentario_topo {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+}
+
+.ocorrencia_comentario_topo strong {
+    color: #0E121B;
+}
+
+.ocorrencia_comentario_topo span {
+    color: #4E6797;
+}
+
+.ocorrencia_comentario p {
+    margin: 6px 0 0;
+    font-size: 15px;
+    color: #2F3640;
+}
+
+/* Card A - Engajamento */
+.ocorrencia_apoio_topo {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 20px;
+}
+
+.ocorrencia_apoio_icone {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    background-color: rgba(44, 107, 237, 0.1);
+    color: #2C6BED;
+}
+
+.ocorrencia_apoio_icone .material-symbols-outlined {
+    font-size: 26px;
+}
+
+.ocorrencia_apoio_contagem {
+    margin: 0;
+    font-size: 14px;
+    color: #4E6797;
+}
+
+.ocorrencia_apoio_contagem strong {
+    font-size: 24px;
+    font-weight: 900;
+    color: #0E121B;
+}
+
+.ocorrencia_apoio_relevancia {
+    margin: 0;
+    font-size: 13px;
+    font-weight: 500;
+    color: #2ECC71;
+}
+
+.ocorrencia_btn_primario,
+.ocorrencia_btn_secundario,
+.ocorrencia_btn_mapa {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    padding: 12px;
+    border-radius: 12px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.ocorrencia_btn_primario {
+    border: none;
+    background-color: #2C6BED;
+    color: white;
+    font-weight: 700;
+}
+
+.ocorrencia_btn_primario:hover {
+    background-color: #5b8ae9;
+}
+
+.ocorrencia_btn_primario.apoiado {
+    background-color: #2ECC71;
+    cursor: default;
+}
+
+.ocorrencia_btn_secundario {
+    margin-top: 10px;
+    border: 1px solid #E7EBF3;
+    background-color: #F2F4F7;
+    color: #2F3640;
+    font-weight: 500;
+}
+
+.ocorrencia_btn_secundario:hover {
+    background-color: #E7EBF3;
+}
+
+/* Card B - Localização */
+.ocorrencia_link_azul {
+    font-size: 13px;
+    font-weight: 700;
+    color: #2C6BED;
+}
+
+.ocorrencia_mapa {
+    position: relative;
+    height: 180px;
+    border-radius: 12px;
+    overflow: hidden;
+    background-color: #E7EBF3;
+}
+
+.ocorrencia_mapa img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.ocorrencia_mapa .ocorrencia_mapa_pino {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -85%);
+    font-size: 36px;
+    color: #E74C3C;
+    font-variation-settings: 'FILL' 1;
+}
+
+.ocorrencia_endereco {
+    margin: 14px 0;
+    font-size: 13px;
+    line-height: 20px;
+    color: #4E6797;
+}
+
+.ocorrencia_btn_mapa {
+    background-color: rgba(44, 107, 237, 0.1);
+    color: #2C6BED;
+    font-weight: 700;
+}
+
+.ocorrencia_btn_mapa:hover {
+    background-color: rgba(44, 107, 237, 0.18);
+}
+
+/* Toast */
+.ocorrencia_toast {
+    position: fixed;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1100;
+    width: max-content;
+    max-width: 90%;
+    padding: 12px 20px;
+    border-radius: 12px;
+    background-color: #0E121B;
+    color: white;
+    font-size: 14px;
+    font-weight: 500;
+    text-align: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.3s;
+}
+
+.ocorrencia_toast.visivel {
+    opacity: 1;
+}
+
+/* Tablet pequeno */
+@media (min-width: 480px) {
+    /* INDEX */
+    .mock_celular {
+        max-width: 21rem;
+    }
+
+    /* SOBRE-NOS */
+    .dados_pq_nasceu {
+        justify-content: center;
+        margin: 0 auto;
+    }
+    /* PERGUNTAS FREQUENTES */
+    .div_caixas_de_perguntas {
+        padding: 0px 0px 30px 0;
+    }
+
+    /* TELA LOGIN  */
+    .texto_esquerdo_login {
+        display: none !important; 
+    }
+
+    .h2_entrar_login {
+        margin: 65px 0 0 0;
+    }
+
+    .h2_entrar_cadastrar {
+        margin: 65px 0 0 0;
+    }
+
+    .section_login {
+        max-width: 623px;
+        margin: 35px auto;
+        padding: 15px;
+    }
+
+    /* TELA CADASTRE-SE */
+    .texto_esquerdo_cadastrar {
+        display: none !important; 
+    }
+
+    .section_cadastrar {
+        max-width: 623px;
+        margin: 35px auto 0;
+        padding: 15px;
+    }
+
+    .img_entrar_cadastrar {
+        width: clamp(223px, 40%, 500px);
+    }
+    /* tela impacto */
+    .p-cinza3-impacto {
+        margin: 20px auto;
+    }
+
+    .main_perfil_prefeitura {
+        padding: 8px 25px 50px;
+    }
+
+    .identidade_perfil {
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: flex-start;
+    }
+
+    .dados_identidade_perfil {
+        flex: 1 1 260px;
+    }
+}
+
+/* Tablet */
+@media (min-width: 768px) {
+    .p_tec {
+        max-width: 500px;
+        margin: 15px auto;
+    }
+
+    .impacto_na_cidade {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        margin: 50px 45px;
+    }
+    
+    .card_impacto_index {
+        border-top: none;
+        border-bottom: none;
+        border-left: 2px solid #E7EBF3;
+        border-right: 2px solid #E7EBF3;
+        padding: 0 4rem;
+    }
+
+    .cards_pq {
+        max-width: 500px;
+        margin: 25px auto;
+    }
+
+    .alinhando-text-img-funciona {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+
+    .alinhamento-centro-funcionamento {
+        width: 60%;
+        padding: 70px 0 0 5px;
+        text-align: left;
+    }
+
+    .p-dezoito-funciona {
+        text-align: left;
+    }
+
+    .agora-e-2tardee-funciona {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+
+    /* funciona. 3section. */
+    .h4-impar-funciona {
+        text-align: right;
+    }
+    .h4-par-funciona {
+        text-align: left;
+    }
+    .p-impar-funciona {
+        text-align: end;
+    }
+    .p-par-funciona {
+        text-align: start;
+    }
+    /* funciona. 4section. */
+    .divs2-funciona {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+    .aalinhado-funciona {
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+    }
+
+    .cards-3-impacto {
+        flex-direction: row;
+        margin: 70px 0;
+    }
+    .h2-preto-impacto {
+        padding: 35px 0 0 0;
+    }
+    .alianhando5-impacto {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    .alinhando7-impacto {
+        text-align: start;
+        justify-content: start;
+        width: 50%;
+        padding: 0 20px;
+    }
+    .arrumar-impacto {
+        justify-content: start;
+    }
+    .montoramento2-impacto {
+        margin: 50px 0 0;
+        padding: 10px;
+        width: 128px;
+   }
+   /* tela impacto */
+   .p-cinza3-impacto {
+    text-align: left;
+    margin: 0;
+   }
+
+    .cabecalho_painel_perfil {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+
+    .linha_campos_perfil {
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    
+    }
+
+    .ocorrencia_principal {
+        padding: 8px 24px 48px;
+    }
+
+    .ocorrencia_grid {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    .ocorrencia_coluna_esq {
+        width: 68%;
+    }
+
+    .ocorrencia_coluna_dir {
+        order: 0;
+        width: 32%;
+        position: sticky;
+        top: 88px;
+    }
+
+    .ocorrencia_card {
+        padding: 24px;
+    }
+
+    .ocorrencia_titulo {
+        font-size: 32px;
+    }
+
+    .ocorrencia_tempo {
+        margin-left: auto;
+    }
+
+    .ocorrencia_imagem img {
+        height: 260px;
+    }
+}
+
+/* Notebook */
+@media (min-width: 1024px) {
+    /*Header*/
+    .header_index {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    
+    .logo_cdd_header {
+        max-width: 3rem;
+    }
+    
+    header .material-symbols-outlined {
+        display: none;
+    }
+
+    header li {
+        display: inline-block;
+        margin: 0 7px;
+    }
+
+    li.baixar_agora {
+        margin-top: 0px;
+    }
+
+    .h1_index {
+        margin-top: 17px;
+    }
+
+    .header_index li.entrar_botao_index a {
+        padding: 8px 32px;
+    }
+
+    .header_index li.baixar_agora a {
+        padding: 12px 32px;
+    }
+
+    .header_index ul {
+        display: block;
+    }
+    /* INDEX */
+    /*Main*/
+    /*Parte superior*/
+    .parte_superior {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+
+    .tick_disponivel {
+        text-align: left;
+        margin: 0;
+    }
+
+    .h2_tec_que_resolve {
+        font-size: 50px;
+        line-height: 0.2;
+        text-align: left;
+    }
+
+    .p_tec {
+        text-align: left;
+        padding: 0;
+    }
+
+    .div_apps {
+        flex-direction: row;
+    }
+
+    .img_baixar {
+        margin: 0 6px;
+    }
+
+    .mock_celular {
+        max-width: 23rem;
+    }
+
+    /*Impacto na cidade*/
+    .impacto_na_cidade {
+        margin: 25px 100px;
+    }
+
+    /* SOBRE NOS */
+    /* TELAO SUPERIOR */
+    .cont-parte_superior_sobre_nos {
+        padding: 36px 0;
+    }
+
+    .h2_sobre_nos_parte_superior {
+        font-size: 45px;
+        max-width: 700px;
+    }
+
+    /* NOSSOS VALORES */
+    .div_cards_nossos_valores {
+        flex-direction: row;
+    }
+
+    .cards_nossos_valores {
+        margin: 10px;
+    }
+
+    /* POR QUE NASCEU */
+    .pq_nasceu {
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+
+    .img_pessoa {
+        width: 600px;
+        height: 500px;
+    }
+
+    .text_pq_nasceu {
+        max-width: 600px;
+    }
+
+    /* PRONTO PARA TRANFORMAR */
+    .h2_transformar {
+        padding: 25px 0 10px 0;
+    }
+
+    /* TELA LOGIN */
+    .fundo_login {
+        background-image: url(../img/Fundo_login.png);
+        background-size: cover;
+        background-position: right;
+        width: clamp(450px, 45%, 700px);
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end; 
+}
+
+    .h2_entrar_login {
+        margin-top: 150px;
+    }
+
+    .cont-login {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .h1_login {
+        color: white;
+        margin: 0;
+        padding: 0;
+        font-weight: 900;
+        font-size: 3rem;
+    }
+
+    .h4_login {
+        color: white;
+        font-weight: 300;
+        line-height: 40px;
+        font-size: 1.5rem;
+    }
+
+    .texto_esquerdo_login {
+        display: block !important;
+        padding: 0 20px 115px 30px;
+    }
+
+    /* TELA CADASTRE-SE */
+    .fundo_cadastrar {
+        display: block;
+        background-image: url(../img/Fundo_login.png);
+        background-size: cover;
+        background-position: right;
+        width: clamp(450px, 45%, 700px);
+        height: 100;
+        display: flex;
+        align-items: end;
+    }
+
+
+    .cont-cadastrar {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .h1_cadastrar {
+        color: white;
+        margin: 0;
+        padding: 0;
+        font-weight: 900;
+        font-size: 3rem;
+    }
+
+    .h4_cadastrar {
+        color: white;
+        font-weight: 300;
+        line-height: 40px;
+        font-size: 1.5rem;
+    }
+
+    .texto_esquerdo_cadastrar {
+        display: block !important;
+        padding: 0 10px 115px 30px;
+    }
+    /*Footer*/
+    .footer_section {
+        flex-direction: row;
+        justify-content: space-around;
+        text-align: left;
+        margin: 65px 4px;
+    }
+
+    .footer_logo {
+        justify-content: left;
+    }
+    
+    .footer_sobre {
+        max-width: 350px;
+        text-align: left;
+    }
+
+    .icons_footer_img {
+        max-width: 2.5rem;
+        padding: 0 2px;
+    }
+    /* tela impacto e funciona */
+    .div1e3-funciona {
+        justify-content: center;
+        text-align: center;
+    }
+    .div2e4-funciona {
+        justify-content: center;
+        text-align: center;
+    }
+    .span2-1azul-funciona {
+        display: block;
+        color: #fff;
+        background-color: #2C6BED;
+        font-size: 15px;
+        font-weight: 500;
+        padding: 2px;
+        border-radius: 25px;
+        border: 3px solid #fff;
+        width: 30px;
+        height: 30px;
+        text-align: center;
+        margin: 70px 20px 0 0;
+    }
+    .span2-2azul-funciona {
+        display: block;
+        color: #fff;
+        background-color: #2C6BED;
+        font-size: 15px;
+        font-weight: 500;
+        padding: 2px;
+        border-radius: 25px;
+        border: 3px solid #fff;
+        width: 30px;
+        height: 30px;
+        text-align: center;
+        margin: 0 0 70px;
+    }
+    .span2-verde-funciona {
+        display: block;
+        color: #fff;
+        background-color: #2ECC71;
+        font-size: 15px;
+        font-weight: 500;
+        padding: 2px;
+        border-radius: 25px;
+        border: 3px solid #fff;
+        width: 30px;
+        height: 30px;
+        text-align: center;
+        margin: 70px 20px 0 0;
+    }
+    .span2-4azul-funciona {
+        display: block;
+        color: #fff;
+        background-color: #2C6BED;
+        font-size: 15px;
+        font-weight: 500;
+        padding: 2px;
+        border-radius: 25px;
+        border: 3px solid #fff;
+        width: 30px;
+        height: 30px;
+        text-align: center;
+        margin: 0 0 70px;
+    }
+    .bloco-funciona {
+        gap: 120px;
+    }
+    .div-div-funciona {
+        display: flex;
+        flex-direction: row;
+        height: 370px;
+    }
+    .cadeado-funciona {
+        width: 30%;
+        padding: 0;
+        margin-top: 80px;
+    }
+
+    .img-section5-funciona {
+        width: 170px;
+        height: 170px;
+        border-radius: 50%;
+        margin: 0;
+    }
+
+    .div333-funciona {
+        justify-content: start;
+        text-align: start;
+        margin-top: 85px;
+        width: 70%;
+    }
+    .p-p-funciona {
+        text-align: left;
+        margin: 20px 0 10px 40px;
+    }
+
+    .agora-e-tarde-impacto {
+            display: flex;
+            flex-direction: row;
+            gap: 150px;
+            margin: 60px 0;
+        }
+    .agora-e-tarde-impacto {
+            gap: 15px;
+        }
+    .img-grande26-impacto {
+        width: 550px;
+    }
+
+    .imagens-grandes-impactos {
+        width: clamp(145px, 100%, 550px);
+        height: clamp(260px, 45%, 500px);
+    }
+
+    .img-cell-impacto {
+        height: 252px;
+    }
+
+    .img-cell1-impacto {
+        height: 252px;
+    }
+
+    .tick2_sobre_nos {
+        padding: 5px 6px;
+    }
+
+    .resultados-impacto {
+        font-size: 48px;
+        font-weight: 900;
+        max-width: 10000px;
+        margin: 5px auto 5px;
+        color: white;
+        padding: 5px;
+        text-align: center;
+    }
+
+    .paragrafos-impacto {
+        color: white;
+        font-size: 19px;
+        font-weight: 400;
+        max-width: 777px;
+        margin: 0 auto 20px;
+        padding: 17px 5px 60px 5px;
+        text-align: center;
+    }
+
+    .cards-3-impacto {
+        justify-content: center;
+    }
+
+    .card-impacto {
+        margin: 20px 70px;
+        background-color: rgb(255, 255, 255);
+        width: 250px;
+        height: 200px;
+        border-radius: 30px;
+    }
+    .painel_perfil {
+        padding: 28px;
+    }
+
+    .status_operacional_perfil {
+        align-self: center;
+    }   
+
+    .ocorrencia_imagem img {
+        height: 400px;
+    }
+}
+
+/* Desktop grande */
+@media (min-width: 1400px) {
+    /* MAIN INDEX */
+    .card_impacto_index {
+        margin: 0;
+        max-width: 400px;
+    }
+    .cont_pq_usar {
+        padding: 30px;
+    }
+
+    .div_cards_pq {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .cards_pq {
+        margin: 10px 35px;
+    }
+
+    .div_cards_como_funciona {
+        flex-direction: row;
+        justify-content: space-around;
+        margin: 0 35px;
+        text-align: center;
+    }
+
+    .card_como_funciona {
+        max-width: 400px;
+    }
+
+    /* SOBRE NOS */
+    .h2_sobre_nos_parte_superior {
+        font-size: 60px;
+        max-width: 850px;
+        text-align: center;
+    }
+
+    .img_pessoa {
+        width: 800px;
+        height: 600px;
+    }
+
+    .text_pq_nasceu {
+        max-width: 800px;
+    }
+
+    /* TELA LOGIN */
+    .fundo_login {
+        min-height: 913px;
+    }
+
+    /* TELA CADASTRE-SE */
+    .fundo_login {
+        min-height: 913px;
+    }
+
+    .texto_esquerdo_cadastrar {
+        padding: 0 10px 115px 45px;
+    }
+}
