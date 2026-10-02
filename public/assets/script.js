@@ -246,29 +246,6 @@ if (checkbox) {
 }
 
 
-// ======================================================
-// ENVIO DO FORMULÁRIO
-// ======================================================
-
-if (form && checkbox) {
-
-    form.addEventListener("submit", (e) => {
-
-        if (!checkbox.checked) {
-
-            e.preventDefault();
-
-            alert("Você precisa aceitar os termos!");
-
-            return;
-        }
-
-        e.preventDefault();
-
-        window.location.href = "index.html";
-    });
-}
-
 
 // ======================================================
 // CARREGAMENTO
@@ -285,6 +262,10 @@ window.addEventListener("load", () => {
         verificarCheckbox();
     }
 });
+
+// ======================================================
+// CADASTRO
+// ======================================================
 
 const formCadastro = document.querySelector('.form_cadastrar');
 
@@ -313,6 +294,16 @@ if (formCadastro) {
       return;
     }
 
+    if (senha.length<6) {
+        alert('A senha deve conter mais de seis caracteres');
+        return;
+    }
+
+    if (cep.length !== 8){
+        alert('O CEP deve conter 8 dígitos');
+        return;
+    }
+
     const resposta = await fetch('http://localhost:3000/auth/register', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -329,3 +320,45 @@ if (formCadastro) {
     }
   });
 }
+
+const formLogin = document.querySelector('#form_login');
+
+formLogin.addEventListener('submit', async (event) => {
+
+    event.preventDefault();
+
+    const email = document.querySelector('#email_login').value;
+    const senha = document.querySelector('#senha_login').value;
+
+    try {
+
+        const resposta = await fetch('http://localhost:3000/auth/login', {
+            method: 'POST',
+
+            headers: {
+                'Content-Type': 'application/json'
+            },
+
+            body: JSON.stringify({
+                email: email,
+                senha: senha
+            })
+        });
+
+        const dados = await resposta.json();
+
+        if (!resposta.ok) {
+            alert(dados.message);
+            return;
+        }
+
+        // Login correto
+        window.location.href = 'perfil_cidadao.html';
+
+    } catch (erro) {
+
+        console.error(erro);
+        alert('Erro ao conectar com o servidor.');
+
+    }
+});

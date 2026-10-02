@@ -10,7 +10,6 @@ CREATE TABLE cidadao (
   bairro VARCHAR(80),
   cidade VARCHAR(80),
   estado CHAR(2),
-  foto_url VARCHAR(255),
   criado_em DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
 
