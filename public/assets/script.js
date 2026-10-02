@@ -1,33 +1,3 @@
-// ======================================================
-// FAQ
-// ======================================================
-
-const perguntas = document.querySelectorAll(".caixa_de_perguntas");
-
-perguntas.forEach((pergunta) => {
-    pergunta.addEventListener("click", () => {
-        const resposta = pergunta.nextElementSibling;
-
-        document.querySelectorAll(".caixa_de_resposta_faq").forEach((r) => {
-            if (r !== resposta) {
-                r.classList.remove("ativo");
-            }
-        });
-
-        document.querySelectorAll(".caixa_de_perguntas").forEach((p) => {
-            if (p !== pergunta) {
-                p.classList.remove("ativa");
-            }
-        });
-
-        if (resposta) {
-            resposta.classList.toggle("ativo");
-        }
-
-        pergunta.classList.toggle("ativa");
-    });
-});
-
 
 // ======================================================
 // MENU MOBILE
@@ -206,7 +176,6 @@ const abrir = document.getElementById("abrirModal");
 const fechar = document.getElementById("fecharModal");
 const btnAceito = document.getElementById("btnAceito");
 const checkbox = document.getElementById("checkboxTermos");
-const btnSubmit = document.getElementById("btnSubmit");
 const form = document.querySelector(".form_cadastrar");
 
 
@@ -316,3 +285,47 @@ window.addEventListener("load", () => {
         verificarCheckbox();
     }
 });
+
+const formCadastro = document.querySelector('.form_cadastrar');
+
+if (formCadastro) {
+  formCadastro.addEventListener('submit', async function (evento) {
+    evento.preventDefault();
+
+    if (!checkbox.checked) {
+      alert('Você precisa aceitar os termos!');
+      return;
+    }
+
+    if (btnPrefeitura.classList.contains('ativo')) {
+      alert('Cadastro de prefeitura ainda não está pronto');
+      return;
+    }
+
+    const nome = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const cep = document.getElementById('cep').value;
+    const senha = document.getElementById('senha').value;
+    const confirmar = document.getElementById('confirm_senha').value;
+
+    if (senha !== confirmar) {
+      alert('As senhas não são iguais');
+      return;
+    }
+
+    const resposta = await fetch('http://localhost:3000/auth/register', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ nome, email, cep, senha }),
+    });
+
+    const dados = await resposta.json();
+
+    if (resposta.ok) {
+      alert('Cadastro feito!');
+      window.location.href = 'login.html';
+    } else {
+      alert(dados.message);
+    }
+  });
+}

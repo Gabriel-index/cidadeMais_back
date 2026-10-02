@@ -11,7 +11,6 @@ CREATE TABLE cidadao (
   cidade VARCHAR(80),
   estado CHAR(2),
   foto_url VARCHAR(255),
-  aceitou_termos_em DATETIME NOT NULL,
   criado_em DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
 
@@ -19,14 +18,11 @@ CREATE TABLE prefeitura (
   id INT PRIMARY KEY AUTO_INCREMENT,
   nome_orgao VARCHAR(150) NOT NULL,
   secretaria VARCHAR(150),
-  cnpj CHAR(14) NOT NULL UNIQUE,
   email_institucional VARCHAR(150) NOT NULL UNIQUE,
   senha_hash VARCHAR(255) NOT NULL,
   gestor_responsavel VARCHAR(120),
   cidade VARCHAR(80),
   estado CHAR(2),
-  verificada BOOLEAN NOT NULL DEFAULT FALSE,
-  aceitou_termos_em DATETIME NOT NULL,
   criado_em DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
 
