@@ -6,10 +6,11 @@ import { RegisterDto } from './dto/registro.dto';
 @Injectable()
 export class AuthService {
   db = mysql.createPool({
-    host: 'localhost',
-    user: 'root',
-    password: 'SUA_SENHA_AQUI',
-    database: 'cidades_mais',
+    host: process.env.DB_HOST,
+    port: Number(process.env.DB_PORT),
+    user: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_NAME,
   });
 
   async register(dados: RegisterDto) {
@@ -17,6 +18,7 @@ export class AuthService {
       'SELECT id FROM cidadao WHERE email = ?',
       [dados.email],
     );
+
     if ((lista as any[]).length > 0) {
       throw new BadRequestException('Email já cadastrado');
     }
