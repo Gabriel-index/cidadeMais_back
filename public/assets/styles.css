@@ -1003,6 +1003,26 @@ li.baixar_agora {
   transform: scale(1.05);
 }
 
+/* VALIDAÇÃO AO VIVO */
+.form_cadastrar input.campo_erro {
+    border: 1px solid #dc2626 !important;
+    background-color: #fef2f2;
+    animation: tremer 0.3s;
+}
+
+.msg_erro {
+    display: block;
+    color: #dc2626;
+    font-size: 0.85rem;
+    margin: -4px 0 6px;
+}
+
+@keyframes tremer {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-4px); }
+    75% { transform: translateX(4px); }
+}
+
 /*Footer*/
 
 footer {

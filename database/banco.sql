@@ -45,23 +45,3 @@ CREATE TABLE problema (
   FOREIGN KEY (cidadao_id) REFERENCES cidadao(id),
   FOREIGN KEY (prefeitura_id) REFERENCES prefeitura(id)
 );
-
-CREATE TABLE voto (
-  id INT PRIMARY KEY AUTO_INCREMENT,
-  cidadao_id INT NOT NULL,
-  problema_id INT NOT NULL,
-  criado_em DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  UNIQUE (cidadao_id, problema_id),
-  FOREIGN KEY (cidadao_id) REFERENCES cidadao(id),
-  FOREIGN KEY (problema_id) REFERENCES problema(id)
-);
-
-CREATE TABLE comentario (
-  id INT PRIMARY KEY AUTO_INCREMENT,
-  problema_id INT NOT NULL,
-  cidadao_id INT NOT NULL,
-  texto TEXT NOT NULL,
-  criado_em DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  FOREIGN KEY (problema_id) REFERENCES problema(id),
-  FOREIGN KEY (cidadao_id) REFERENCES cidadao(id)
-);

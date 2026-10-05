@@ -1,13 +1,10 @@
-import { Body, Controller, Post } from '@nestjs/common';
-
+import { Body, Controller, Get, Headers, Post } from '@nestjs/common';
 import { AuthService } from './auth.service';
-
 import { RegisterDto } from './dto/registro.dto';
 import { LoginDto } from './dto/login.dto';
 
 @Controller('auth')
 export class AuthController {
-
   constructor(private authService: AuthService) {}
 
   @Post('register')
@@ -20,4 +17,8 @@ export class AuthController {
     return this.authService.login(dados);
   }
 
+  @Get('perfil')
+  perfil(@Headers('authorization') cabecalho: string) {
+    return this.authService.perfil(cabecalho);
+  }
 }

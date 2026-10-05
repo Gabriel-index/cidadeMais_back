@@ -1,4 +1,3 @@
-
 // ======================================================
 // MENU MOBILE
 // ======================================================
@@ -108,6 +107,12 @@ if (formPerfil) {
         }
     }
 
+    // usada depois que os dados do banco são preenchidos na tela
+    window.guardarValoresAtuais = function () {
+        valoresSalvos = campos.map((campo) => campo.value.trim());
+        atualizarBotoes();
+    };
+
     campos.forEach((campo) => {
 
         campo.addEventListener("input", () => {
@@ -141,7 +146,7 @@ if (formPerfil) {
     }
 
 
-    // SALVAR
+    // SALVAR (por enquanto só na tela, ainda não salva no banco)
     formPerfil.addEventListener("submit", (evento) => {
 
         evento.preventDefault();
@@ -176,6 +181,7 @@ const abrir = document.getElementById("abrirModal");
 const fechar = document.getElementById("fecharModal");
 const btnAceito = document.getElementById("btnAceito");
 const checkbox = document.getElementById("checkboxTermos");
+const btnSubmit = document.getElementById("btnSubmit");
 const form = document.querySelector(".form_cadastrar");
 
 
@@ -246,7 +252,6 @@ if (checkbox) {
 }
 
 
-
 // ======================================================
 // CARREGAMENTO
 // ======================================================
@@ -264,101 +269,213 @@ window.addEventListener("load", () => {
 });
 
 // ======================================================
+// VALIDAÇÃO AO VIVO (CADASTRO)
+// ======================================================
+
+const inputCep = document.getElementById('cep');
+const inputSenha = document.getElementById('senha');
+const inputConfirmar = document.getElementById('confirm_senha');
+const erroCep = document.getElementById('erro_cep');
+const erroSenha = document.getElementById('erro_senha');
+
+function marcarErro(input, aviso, mensagem) {
+    input.classList.add('campo_erro');
+    aviso.textContent = mensagem;
+}
+
+function limparErro(input, aviso) {
+    input.classList.remove('campo_erro');
+    aviso.textContent = '';
+}
+
+// CEP: só números, vermelho se passar de 8 dígitos
+if (inputCep && erroCep) {
+    inputCep.addEventListener('input', () => {
+        inputCep.value = inputCep.value.replace(/\D/g, '');
+
+        if (inputCep.value.length > 8) {
+            marcarErro(inputCep, erroCep, 'O CEP deve ter 8 dígitos');
+        } else {
+            limparErro(inputCep, erroCep);
+        }
+    });
+
+    // ao sair do campo, também avisa se tiver menos de 8
+    inputCep.addEventListener('blur', () => {
+        if (inputCep.value !== '' && inputCep.value.length !== 8) {
+            marcarErro(inputCep, erroCep, 'O CEP deve ter 8 dígitos');
+        }
+    });
+}
+
+// Senhas: vermelho se forem diferentes
+function conferirSenhas() {
+    if (inputConfirmar.value === '') {
+        limparErro(inputConfirmar, erroSenha);
+        return;
+    }
+
+    if (inputSenha.value !== inputConfirmar.value) {
+        marcarErro(inputConfirmar, erroSenha, 'As senhas não são iguais');
+    } else {
+        limparErro(inputConfirmar, erroSenha);
+    }
+}
+
+if (inputSenha && inputConfirmar && erroSenha) {
+    inputSenha.addEventListener('input', conferirSenhas);
+    inputConfirmar.addEventListener('input', conferirSenhas);
+}
+
+// ======================================================
 // CADASTRO
 // ======================================================
 
 const formCadastro = document.querySelector('.form_cadastrar');
 
 if (formCadastro) {
-  formCadastro.addEventListener('submit', async function (evento) {
-    evento.preventDefault();
+    formCadastro.addEventListener('submit', async function (evento) {
+        evento.preventDefault();
 
-    if (!checkbox.checked) {
-      alert('Você precisa aceitar os termos!');
-      return;
-    }
+        if (!checkbox.checked) {
+            alert('Você precisa aceitar os termos!');
+            return;
+        }
 
-    if (btnPrefeitura.classList.contains('ativo')) {
-      alert('Cadastro de prefeitura ainda não está pronto');
-      return;
-    }
+        if (btnPrefeitura.classList.contains('ativo')) {
+            alert('Cadastro de prefeitura ainda não está pronto');
+            return;
+        }
 
-    const nome = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const cep = document.getElementById('cep').value;
-    const senha = document.getElementById('senha').value;
-    const confirmar = document.getElementById('confirm_senha').value;
+        const nome = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const cep = document.getElementById('cep').value;
+        const senha = document.getElementById('senha').value;
+        const confirmar = document.getElementById('confirm_senha').value;
 
-    if (senha !== confirmar) {
-      alert('As senhas não são iguais');
-      return;
-    }
+        if (senha !== confirmar) {
+            alert('As senhas não são iguais');
+            return;
+        }
 
-    if (senha.length<6) {
-        alert('A senha deve conter mais de seis caracteres');
-        return;
-    }
+        if (senha.length < 6) {
+            alert('A senha deve conter pelo menos seis caracteres');
+            return;
+        }
 
-    if (cep.length !== 8){
-        alert('O CEP deve conter 8 dígitos');
-        return;
-    }
+        if (cep.length !== 8) {
+            alert('O CEP deve conter 8 dígitos');
+            return;
+        }
 
-    const resposta = await fetch('http://localhost:3000/auth/register', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ nome, email, cep, senha }),
-    });
-
-    const dados = await resposta.json();
-
-    if (resposta.ok) {
-      alert('Cadastro feito!');
-      window.location.href = 'login.html';
-    } else {
-      alert(dados.message);
-    }
-  });
-}
-
-const formLogin = document.querySelector('#form_login');
-
-formLogin.addEventListener('submit', async (event) => {
-
-    event.preventDefault();
-
-    const email = document.querySelector('#email_login').value;
-    const senha = document.querySelector('#senha_login').value;
-
-    try {
-
-        const resposta = await fetch('http://localhost:3000/auth/login', {
+        const resposta = await fetch('http://localhost:3000/auth/register', {
             method: 'POST',
-
-            headers: {
-                'Content-Type': 'application/json'
-            },
-
-            body: JSON.stringify({
-                email: email,
-                senha: senha
-            })
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ nome, email, cep, senha }),
         });
 
         const dados = await resposta.json();
 
-        if (!resposta.ok) {
+        if (resposta.ok) {
+            alert('Cadastro feito!');
+            window.location.href = 'login.html';
+        } else {
             alert(dados.message);
-            return;
         }
+    });
+}
 
-        // Login correto
-        window.location.href = 'perfil_cidadao.html';
 
-    } catch (erro) {
+// ======================================================
+// LOGIN
+// ======================================================
 
-        console.error(erro);
-        alert('Erro ao conectar com o servidor.');
+const formLogin = document.querySelector('#form_login');
 
+if (formLogin) {
+    formLogin.addEventListener('submit', async (event) => {
+        event.preventDefault();
+
+        const email = document.querySelector('#email_login').value;
+        const senha = document.querySelector('#senha_login').value;
+
+        try {
+            const resposta = await fetch('http://localhost:3000/auth/login', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ email: email, senha: senha }),
+            });
+
+            const dados = await resposta.json();
+
+            if (!resposta.ok) {
+                alert(dados.message);
+                return;
+            }
+
+            localStorage.setItem('token', dados.token);
+            window.location.href = 'perfil_cidadao.html';
+        } catch (erro) {
+            console.error(erro);
+            alert('Erro ao conectar com o servidor.');
+        }
+    });
+}
+
+
+// ======================================================
+// CARREGAR PERFIL
+// ======================================================
+
+async function carregarPerfil() {
+    const token = localStorage.getItem('token');
+
+    if (!token) {
+        window.location.href = 'login.html';
+        return;
     }
-});
+
+    const resposta = await fetch('http://localhost:3000/auth/perfil', {
+        headers: { Authorization: 'Bearer ' + token },
+    });
+
+    if (!resposta.ok) {
+        window.location.href = 'login.html';
+        return;
+    }
+
+    const usuario = await resposta.json();
+
+    // campos do formulário
+    document.getElementById('orgao').value = usuario.nome;
+    document.getElementById('email_institucional').value = usuario.email;
+    document.getElementById('gestor').value = usuario.bairro || '';
+    document.getElementById('cidade').value = usuario.cidade
+        ? usuario.cidade + ' - ' + usuario.estado
+        : '';
+
+    // topo da tela: nome grande
+    document.getElementById('titulo_prefeitura').textContent = usuario.nome;
+
+    // topo da tela: iniciais (ex: Mariana Costa -> MC)
+    const partes = usuario.nome.trim().split(' ');
+    const iniciais = partes[0][0] + (partes.length > 1 ? partes[partes.length - 1][0] : '');
+    document.querySelector('.avatar_prefeitura').firstChild.textContent = iniciais.toUpperCase();
+
+    // topo da tela: linha de bairro e cidade
+    const meta = document.querySelector('.meta_perfil');
+    if (usuario.bairro && usuario.cidade) {
+        meta.textContent = 'Bairro ' + usuario.bairro + ' · ' + usuario.cidade + ', ' + usuario.estado;
+    } else {
+        meta.textContent = 'Complete seu perfil para receber notificações da sua região';
+    }
+
+    // avisa a lógica dos botões que estes são os valores originais
+    if (window.guardarValoresAtuais) {
+        window.guardarValoresAtuais();
+    }
+}
+
+if (document.getElementById('form_perfil')) {
+    carregarPerfil();
+}
