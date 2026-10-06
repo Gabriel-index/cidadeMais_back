@@ -588,3 +588,4 @@ if (tokenSalvo && linkEntrar) {
 if (tokenSalvo && document.querySelector('#form_login')) {
     window.location.href = 'perfil_cidadao.html';
 }
+
