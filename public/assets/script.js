@@ -14,6 +14,32 @@ if (menuIcon && menu) {
     });
 }
 
+const perguntas = document.querySelectorAll(".caixa_de_perguntas");
+
+perguntas.forEach((pergunta) => {
+    pergunta.addEventListener("click", () => {
+        const resposta = pergunta.nextElementSibling;
+
+        document.querySelectorAll(".caixa_de_resposta_faq").forEach((r) => {
+            if (r !== resposta) {
+                r.classList.remove("ativo");
+            }
+        });
+
+        document.querySelectorAll(".caixa_de_perguntas").forEach((p) => {
+            if (p !== pergunta) {
+                p.classList.remove("ativa");
+            }
+        });
+
+        if (resposta) {
+            resposta.classList.toggle("ativo");
+        }
+
+        pergunta.classList.toggle("ativa");
+    });
+});
+
 
 // ======================================================
 // ESCOLHA DO TIPO DE CONTA
@@ -519,7 +545,7 @@ if (document.getElementById('form_perfil')) {
 // ======================================================
 
 const tokenSalvo = localStorage.getItem('token');
-const linkEntrar = document.querySelector('.menu a[href="login.html"]');
+const linkEntrar = document.querySelector('.menu a[href*="login.html"]');
 const itemBaixar = document.querySelector('.menu .baixar_agora');
 
 if (tokenSalvo && linkEntrar) {

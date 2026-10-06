@@ -1025,14 +1025,24 @@ li.baixar_agora {
 
 /* MENU LOGADO */
 
-/* ícone do usuário: quadrado arredondado, no estilo do botão Entrar */
-.header_index li.menu_perfil_logado a {
-    display: inline-flex;
+/* MENU LOGADO */
+
+/* o item do menu passa a ter exatamente a altura do botão */
+.header_index li.menu_perfil_logado,
+.header_index li.menu_sair {
+    display: flex;
     align-items: center;
     justify-content: center;
-    vertical-align: middle;
-    width: 40px;
-    height: 40px;
+    padding: 0 8px;
+}
+
+/* ícone do usuário */
+.header_index li.menu_perfil_logado a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
     padding: 0;
     border: 2px solid #D5E1FB;
     border-radius: 12px;
@@ -1046,13 +1056,12 @@ li.baixar_agora {
     color: #2C6BED;
 }
 
-/* sair: fundo vermelho, mesma altura do ícone */
+/* sair */
 .header_index li.menu_sair a {
-    display: inline-flex;
+    display: flex;
     align-items: center;
-    vertical-align: middle;
-    height: 40px;
-    padding: 0 28px;
+    height: 36px;
+    padding: 0 24px;
     border: 2px solid #dc2626;
     border-radius: 12px;
     background-color: #dc2626;
