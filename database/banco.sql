@@ -10,6 +10,7 @@ CREATE TABLE cidadao (
   bairro VARCHAR(80),
   cidade VARCHAR(80),
   estado CHAR(2),
+  complemento VARCHAR(100),
   criado_em DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
 

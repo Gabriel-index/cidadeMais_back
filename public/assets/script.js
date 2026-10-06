@@ -146,8 +146,8 @@ if (formPerfil) {
     }
 
 
-    // SALVAR (por enquanto só na tela, ainda não salva no banco)
-    formPerfil.addEventListener("submit", (evento) => {
+    // SALVAR (salva no banco)
+    formPerfil.addEventListener("submit", async (evento) => {
 
         evento.preventDefault();
 
@@ -156,15 +156,42 @@ if (formPerfil) {
             return;
         }
 
-        valoresSalvos = campos.map((campo) => {
-            return campo.value.trim();
+        // deixa só números no CEP (tira hífen e espaços)
+        const cep = document.getElementById("gestor").value.replace(/\D/g, "");
+
+        if (cep.length !== 8) {
+            mensagemStatus.textContent = "O CEP deve ter 8 dígitos";
+            return;
+        }
+
+        const token = localStorage.getItem("token");
+
+        const resposta = await fetch("http://localhost:3000/auth/perfil", {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json",
+                Authorization: "Bearer " + token,
+            },
+            body: JSON.stringify({
+                nome: document.getElementById("orgao").value.trim(),
+                email: document.getElementById("email_institucional").value.trim(),
+                cep: cep,
+                complemento: document.getElementById("cidade").value.trim(),
+            }),
         });
 
-        atualizarBotoes();
+        const dados = await resposta.json();
 
-        if (mensagemStatus) {
-            mensagemStatus.textContent = "Alterações salvas.";
+        if (!resposta.ok) {
+            mensagemStatus.textContent = Array.isArray(dados.message)
+                ? dados.message[0]
+                : dados.message;
+            return;
         }
+
+        // recarrega os dados do banco (atualiza o topo e os botões)
+        await carregarPerfil();
+        mensagemStatus.textContent = "Alterações salvas.";
     });
 
 
@@ -268,6 +295,7 @@ window.addEventListener("load", () => {
     }
 });
 
+
 // ======================================================
 // VALIDAÇÃO AO VIVO (CADASTRO)
 // ======================================================
@@ -327,6 +355,7 @@ if (inputSenha && inputConfirmar && erroSenha) {
     inputConfirmar.addEventListener('input', conferirSenhas);
 }
 
+
 // ======================================================
 // CADASTRO
 // ======================================================
@@ -336,6 +365,11 @@ const formCadastro = document.querySelector('.form_cadastrar');
 if (formCadastro) {
     formCadastro.addEventListener('submit', async function (evento) {
         evento.preventDefault();
+
+        // se tiver campo vermelho, não envia
+        if (document.querySelector('.campo_erro')) {
+            return;
+        }
 
         if (!checkbox.checked) {
             alert('Você precisa aceitar os termos!');
@@ -440,6 +474,7 @@ async function carregarPerfil() {
     });
 
     if (!resposta.ok) {
+        localStorage.removeItem('token');
         window.location.href = 'login.html';
         return;
     }
@@ -449,10 +484,8 @@ async function carregarPerfil() {
     // campos do formulário
     document.getElementById('orgao').value = usuario.nome;
     document.getElementById('email_institucional').value = usuario.email;
-    document.getElementById('gestor').value = usuario.bairro || '';
-    document.getElementById('cidade').value = usuario.cidade
-        ? usuario.cidade + ' - ' + usuario.estado
-        : '';
+    document.getElementById('gestor').value = usuario.cep || '';
+    document.getElementById('cidade').value = usuario.complemento || '';
 
     // topo da tela: nome grande
     document.getElementById('titulo_prefeitura').textContent = usuario.nome;
@@ -478,4 +511,54 @@ async function carregarPerfil() {
 
 if (document.getElementById('form_perfil')) {
     carregarPerfil();
+}
+
+
+// ======================================================
+// MENU: LOGADO OU NÃO
+// ======================================================
+
+const tokenSalvo = localStorage.getItem('token');
+const linkEntrar = document.querySelector('.menu a[href="login.html"]');
+const itemBaixar = document.querySelector('.menu .baixar_agora');
+
+if (tokenSalvo && linkEntrar) {
+    // 1. "Entrar" vira o ícone de usuário
+    const itemEntrar = linkEntrar.parentElement;
+    itemEntrar.classList.remove('entrar_botao_index', 'entrar_botao_index_atual');
+    itemEntrar.classList.add('menu_perfil_logado');
+
+    linkEntrar.href = 'perfil_cidadao.html';
+    linkEntrar.title = 'Meu perfil';
+    linkEntrar.setAttribute('aria-label', 'Meu perfil');
+    linkEntrar.innerHTML =
+        '<svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">' +
+        '<path d="M12 12a5 5 0 1 0 0-10 5 5 0 0 0 0 10zm0 2c-4.4 0-8 2.2-8 5v1h16v-1c0-2.8-3.6-5-8-5z"/>' +
+        '</svg>';
+
+    // 2. esconde o "Baixar agora"
+    if (itemBaixar) {
+        itemBaixar.style.display = 'none';
+    }
+
+    // 3. cria o botão "Sair"
+    const itemSair = document.createElement('li');
+    itemSair.classList.add('menu_sair');
+
+    const linkSair = document.createElement('a');
+    linkSair.href = '#';
+    linkSair.textContent = 'Sair';
+
+    linkSair.addEventListener('click', (e) => {
+        e.preventDefault();
+        localStorage.removeItem('token');
+        window.location.href = 'index.html';
+    });
+
+    itemSair.appendChild(linkSair);
+    itemEntrar.after(itemSair);
+}
+
+if (tokenSalvo && document.querySelector('#form_login')) {
+    window.location.href = 'perfil_cidadao.html';
 }

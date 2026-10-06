@@ -1023,6 +1023,48 @@ li.baixar_agora {
     75% { transform: translateX(4px); }
 }
 
+/* MENU LOGADO */
+
+/* ícone do usuário: quadrado arredondado, no estilo do botão Entrar */
+.header_index li.menu_perfil_logado a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    border: 2px solid #D5E1FB;
+    border-radius: 12px;
+    background-color: white;
+    color: #2C6BED;
+}
+
+.header_index li.menu_perfil_logado a:hover {
+    background-color: #EEF3FD;
+    border-color: #2C6BED;
+    color: #2C6BED;
+}
+
+/* sair: fundo vermelho, mesma altura do ícone */
+.header_index li.menu_sair a {
+    display: inline-flex;
+    align-items: center;
+    vertical-align: middle;
+    height: 40px;
+    padding: 0 28px;
+    border: 2px solid #dc2626;
+    border-radius: 12px;
+    background-color: #dc2626;
+    color: white;
+    font-weight: 700;
+}
+
+.header_index li.menu_sair a:hover {
+    background-color: #b91c1c;
+    border-color: #b91c1c;
+    color: white;
+}
 /*Footer*/
 
 footer {
@@ -2517,7 +2559,8 @@ footer p {
     }
 
     .header_index ul {
-        display: block;
+        display: flex;
+        align-items: center;
     }
     /* INDEX */
     /*Main*/
