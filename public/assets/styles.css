@@ -2204,13 +2204,13 @@ footer p {
 
 .ocorrencia_btn_primario {
     border: none;
-    background-color: #2C6BED;
+    background-color: #f80000;
     color: white;
     font-weight: 700;
 }
 
 .ocorrencia_btn_primario:hover {
-    background-color: #5b8ae9;
+    background-color: #6d0404;
 }
 
 .ocorrencia_btn_primario.apoiado {

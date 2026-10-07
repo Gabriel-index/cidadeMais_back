@@ -474,7 +474,7 @@ if (formLogin) {
             }
 
             localStorage.setItem('token', dados.token);
-            window.location.href = 'perfil_cidadao.html';
+            window.location.href = 'painelcidadao.html';
         } catch (erro) {
             console.error(erro);
             alert('Erro ao conectar com o servidor.');
