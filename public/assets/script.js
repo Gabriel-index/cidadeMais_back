@@ -589,3 +589,234 @@ if (tokenSalvo && document.querySelector('#form_login')) {
     window.location.href = 'perfil_cidadao.html';
 }
 
+// ======================================================
+// OCORRÊNCIA
+// ======================================================
+
+const tituloOcorrencia = document.querySelector("#titulo_ocorrencia");
+
+if (tituloOcorrencia) {
+
+    const parametros = new URLSearchParams(window.location.search);
+    const id = parametros.get("id");
+
+    if (!id) {
+        tituloOcorrencia.textContent = "Ocorrência não encontrada";
+    } else {
+
+        fetch(`http://localhost:3000/problemas/${id}`)
+            .then(async (resposta) => {
+
+                if (!resposta.ok) {
+                    throw new Error("Erro ao buscar ocorrência");
+                }
+
+                return resposta.json();
+            })
+
+            .then((problema) => {
+
+                // Título
+                document.querySelector("#titulo_ocorrencia").textContent =
+                    problema.titulo;
+
+                // Localização
+                document.querySelector("#local_ocorrencia").textContent =
+                    `${problema.endereco}, ${problema.bairro}`;
+
+                // Imagem
+                document.querySelector("#imagem_ocorrencia").src =
+                    problema.imagem_url;
+
+                // Descrição
+                document.querySelector("#descricao_ocorrencia").textContent =
+                    problema.descricao;
+
+                // Bairro
+                document.querySelector("#bairro_ocorrencia").textContent =
+                    problema.bairro;
+
+                // Endereço
+                document.querySelector("#endereco_ocorrencia").textContent =
+                    problema.endereco;
+
+                // Protocolo
+                document.querySelector("#protocolo_ocorrencia").textContent =
+                    `#URB-${String(problema.id).padStart(4, "0")}`;
+
+                // Protocolo do topo
+                document.querySelector("#protocolo_navegacao").textContent =
+                    `Ocorrência #URB-${String(problema.id).padStart(4, "0")}`;
+
+                // Mapa
+                const enderecoMapa =
+                    `${problema.endereco}, ${problema.bairro}, ${problema.cidade}, ${problema.estado}`;
+
+                document.querySelector("#mapa_ocorrencia").src =
+                    `https://www.google.com/maps?q=${encodeURIComponent(enderecoMapa)}&output=embed`;
+
+                // Link "Ver no mapa"
+                document.querySelector("#link_mapa_ocorrencia").href =
+                    `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(enderecoMapa)}`;
+
+            })
+
+            .catch((erro) => {
+
+                console.error("Erro:", erro);
+
+                document.querySelector("#titulo_ocorrencia").textContent =
+                    "Erro ao carregar ocorrência";
+
+                document.querySelector("#descricao_ocorrencia").textContent =
+                    "Não foi possível carregar os dados desta ocorrência.";
+
+            });
+    }
+}
+
+// ======================================================
+// PAINEL DO CIDADÃO - LISTAR DENÚNCIAS
+// ======================================================
+
+const listaDemandas = document.querySelector(".lista_demandas_painelcidadao");
+
+if (listaDemandas) {
+
+    async function carregarDenuncias() {
+
+        try {
+
+            const resposta = await fetch("http://localhost:3000/problemas");
+
+            if (!resposta.ok) {
+                throw new Error("Erro ao buscar denúncias");
+            }
+
+            const problemas = await resposta.json();
+
+            listaDemandas.innerHTML = "";
+
+            problemas.forEach((problema) => {
+
+                const link = document.createElement("a");
+
+                link.href = `ocorrencia.html?id=${problema.id}`;
+
+
+                const article = document.createElement("article");
+
+                article.className = "card_demanda_painelcidadao";
+
+
+                // ======================================================
+                // IMAGEM
+                // ======================================================
+
+                const divImagem = document.createElement("div");
+
+                divImagem.className = "imagem_demanda_painelcidadao";
+
+
+                const imagem = document.createElement("img");
+
+                imagem.src = problema.imagem_url;
+
+                imagem.alt = problema.titulo;
+
+
+                // ======================================================
+                // STATUS
+                // ======================================================
+
+                const status = document.createElement("span");
+
+                status.className =
+                    "status_badge_painelcidadao status_andamento_painelcidadao";
+
+                status.textContent = "Em andamento";
+
+
+                divImagem.appendChild(imagem);
+
+                divImagem.appendChild(status);
+
+
+                // ======================================================
+                // CONTEÚDO
+                // ======================================================
+
+                const divConteudo = document.createElement("div");
+
+                divConteudo.className =
+                    "conteudo_demanda_painelcidadao";
+
+
+                // Bairro
+
+                const bairro = document.createElement("span");
+
+                bairro.className =
+                    "local_demanda_painelcidadao";
+
+                bairro.textContent = problema.bairro;
+
+
+                // Título
+
+                const titulo = document.createElement("h2");
+
+                titulo.className =
+                    "titulo_demanda_painelcidadao";
+
+                titulo.textContent = problema.titulo;
+
+
+                // Descrição
+
+                const descricao = document.createElement("p");
+
+                descricao.className =
+                    "texto_demanda_painelcidadao";
+
+                descricao.textContent = problema.descricao;
+
+
+                // ======================================================
+                // MONTA O CARD
+                // ======================================================
+
+                divConteudo.appendChild(bairro);
+
+                divConteudo.appendChild(titulo);
+
+                divConteudo.appendChild(descricao);
+
+
+                article.appendChild(divImagem);
+
+                article.appendChild(divConteudo);
+
+
+                link.appendChild(article);
+
+                listaDemandas.appendChild(link);
+
+            });
+
+        } catch (erro) {
+
+            console.error("Erro ao carregar denúncias:", erro);
+
+            listaDemandas.innerHTML = `
+                <p>Não foi possível carregar as denúncias.</p>
+            `;
+
+        }
+
+    }
+
+
+    carregarDenuncias();
+
+}
