@@ -12,11 +12,7 @@ export class ProblemaService {
         database: process.env.DB_NAME,
     });
 
-
-    // ======================================================
     // BUSCAR TODAS AS DENÚNCIAS
-    // ======================================================
-
     async buscarTodos() {
 
         const [resultado] = await this.db.query(
@@ -26,11 +22,7 @@ export class ProblemaService {
         return resultado;
     }
 
-
-    // ======================================================
     // BUSCAR UMA DENÚNCIA PELO ID
-    // ======================================================
-
     async buscarPorId(id: number) {
 
         const [resultado] = await this.db.query(
@@ -41,13 +33,28 @@ export class ProblemaService {
         const problemas = resultado as any[];
 
         if (problemas.length === 0) {
-
-            throw new NotFoundException(
-                'Problema não encontrado'
-            );
-
+            throw new NotFoundException('Problema não encontrado');
         }
 
         return problemas[0];
+    }
+
+    // EXCLUIR UMA DENÚNCIA
+    async excluir(id: number) {
+
+        const [resultado] = await this.db.query(
+            'DELETE FROM problema WHERE id = ?',
+            [id]
+        );
+
+        const resultadoDelete = resultado as any;
+
+        if (resultadoDelete.affectedRows === 0) {
+            throw new NotFoundException('Problema não encontrado');
+        }
+
+        return {
+            mensagem: 'Problema excluído com sucesso'
+        };
     }
 }

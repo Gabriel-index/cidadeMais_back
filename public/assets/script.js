@@ -820,3 +820,62 @@ if (listaDemandas) {
     carregarDenuncias();
 
 }
+
+// ======================================================
+// EXCLUIR OCORRÊNCIA
+// ======================================================
+
+const botaoDelete = document.querySelector("#btn_delete");
+
+if (botaoDelete) {
+
+    botaoDelete.addEventListener("click", async () => {
+
+        // Pega o ID da URL
+        const parametros = new URLSearchParams(window.location.search);
+        const id = parametros.get("id");
+
+        if (!id) {
+            alert("ID da ocorrência não encontrado.");
+            return;
+        }
+
+        // Confirma antes de excluir
+        const confirmar = confirm(
+            "Tem certeza que deseja excluir esta denúncia?"
+        );
+
+        if (!confirmar) {
+            return;
+        }
+
+        try {
+
+            const resposta = await fetch(
+                `http://localhost:3000/problemas/${id}`,
+                {
+                    method: "DELETE"
+                }
+            );
+
+            const dados = await resposta.json();
+
+            if (!resposta.ok) {
+                throw new Error(
+                    dados.message || "Erro ao excluir denúncia"
+                );
+            }
+
+            alert("Denúncia excluída com sucesso!");
+
+            // Volta para o painel
+            window.location.href = "painelcidadao.html";
+
+        } catch (erro) {
+
+            console.error("Erro ao excluir denúncia:", erro);
+
+            alert("Não foi possível excluir a denúncia.");
+        }
+    });
+}
